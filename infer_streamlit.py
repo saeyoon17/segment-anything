@@ -37,9 +37,14 @@ def show_anns(anns, ax):
         ax.imshow(np.dstack((img, m * 0.35)))
 
 
-st.set_page_config(page_title="VESSL-AI: segment anything!", layout="wide")
+st.set_page_config(page_title="VESSL-AI: Segment Anything!", layout="wide")
 st.image(VESSL_LOGO_URL, width=400)
-st.info("Quick segment anything setup via our yaml!")
+st.write(
+    "VESSL is End-to-End MLops platform for ML engineers. Please check our product at https://vessl.ai/"
+)
+st.info(
+    "This project is ran using 'vessl run'. Check out other projects you can run through the link!"
+)
 
 image_path = st.file_uploader("Upload your image!", type=["png", "jpg", "jpeg"])
 if image_path is not None:
