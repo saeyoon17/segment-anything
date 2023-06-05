@@ -50,14 +50,12 @@ if image_path is not None:
         mask_generator = mask_generate()
         masks = mask_generator.generate(image)
 
-        col3, col4 = st.columns(2)
-        with col3:
-            st.image(image)
-            st.success("Original Image")
-        with col4:
-            fig, ax = plt.subplots(figsize=(20, 20))
-            ax.imshow(image)
-            show_anns(masks, ax)
-            ax.axis("off")
-            st.pyplot(fig)
-            st.success("Output Image")
+        st.image(image)
+        st.success("Original Image")
+
+        fig, ax = plt.subplots(figsize=(15, 15))
+        ax.imshow(image)
+        show_anns(masks, ax)
+        ax.axis("off")
+        st.pyplot(fig)
+        st.success("Output Image")
